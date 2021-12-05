@@ -634,13 +634,18 @@ Tenemos
 
 \section{Modelo Depredador-Presa de Lotka-Volterra}
 
-Si $y$ representa el número de depredadores y $x$ representa el número de presas, entonces podemos describir el sistema depredador-presa de la siguiente manera:
+Si $y$ representa el número de depredadores y $x$ representa el número
+de presas, entonces podemos describir el sistema depredador-presa de
+la siguiente manera:
 \[
   \begin{cases}
     \frac{dx}{dt} = -\alpha x + \beta xy\\
     \frac{dy}{dt} = \gamma y - \delta xy,
   \end{cases}
-\] donde $\alpha, \beta, \gamma$ y $\delta$ son constantes positivas. Éste sistema tiene los puntos críticos: $(0,0)$ y $(c / d, a / b)$. Analizaremos la estabilidad de dichos puntos por medio de la linealización y el método del plano-fase. La matriz Jacobiana es
+\] donde $\alpha, \beta, \gamma$ y $\delta$ son constantes positivas.
+Éste sistema tiene los puntos críticos: $(0,0)$ y $(c / d, a / b)$.
+Analizaremos la estabilidad de dichos puntos por medio de la
+linealización y el método del plano-fase. La matriz Jacobiana es
 \[
   DF(X) = \begin{bmatrix}
     -\alpha + \beta y & \beta x\\
@@ -652,13 +657,18 @@ Si $y$ representa el número de depredadores y $x$ representa el número de pres
     -\alpha & 0\\
     0 & \gamma
   \end{bmatrix},
-\] cuyo determinante es $\Delta = -\alpha \gamma < 0$, por lo tanto el punto crítico $(0,0)$ es un punto silla. Ahora para el segundo punto crítico observamos que
+\] cuyo determinante es $\Delta = -\alpha \gamma < 0$, por lo tanto
+el punto crítico $(0,0)$ es un punto silla. Ahora para el
+segundo punto crítico observamos que
 \[
   DF(c / d, a / b) = \begin{bmatrix}
     0 & \frac{\beta \gamma}{\delta}\\
     -\frac{\alpha \delta}{\beta} & 0
   \end{bmatrix},
-\] donde $\delta \alpha \gamma$ y $\tau = 0$. Se sigue que $\tau^2 - 4\Delta < 0$ por lo tanto el punto $(c / d, a / b)$ es un centro en el sistema lineal. Utilizando el método del plano fase observamos
+\] donde $\delta \alpha \gamma$ y $\tau = 0$. Se sigue que
+$\tau^2 - 4\Delta < 0$ por lo tanto el punto $(c / d, a / b)$ es
+un centro en el sistema lineal. Utilizando el método del plano
+fase observamos
 \[
   \frac{dy}{dx} = \frac{\gamma y - \delta x y}{-\alpha x + \beta x y} = \frac{y(\gamma - \delta x}{x(\beta y - \alpha)},
 \] la cual es una ecuación separable por lo tanto
@@ -666,7 +676,10 @@ Si $y$ representa el número de depredadores y $x$ representa el número de pres
   \int \frac{(\beta y - \alpha) \, dy}{y} &= \int \frac{(\gamma - \delta x) \, dx}{x} + c\\
   \beta y - \alpha \ln y &= -\delta x + c \ln x + c\\
   x^{\gamma}e^{-\delta x}y^{\alpha}e^{-\beta y} &= c_0.
-\end{align*} Sea $F(x) = x^{\gamma}e^{-\delta x}$ y $G(y) = y^{\alpha}e^{-\beta y}$, de modo que $F(x)G(y) = c_0$. Podemos observar que $F(x)$ obtiene un valor máximo en $x = c / d$ y similarmente $G(y)$ obtiene un valor máximo en $y = a / b$.
+\end{align*} Sea $F(x) = x^{\gamma}e^{-\delta x}$ y
+$G(y) = y^{\alpha}e^{-\beta y}$, de modo que $F(x)G(y) = c_0$.
+Podemos observar que $F(x)$ obtiene un valor máximo en $x = c / d$
+y similarmente $G(y)$ obtiene un valor máximo en $y = a / b$.
 
 \noindent \textbf{Caso particular.} Consideremos el sistema
 \[
@@ -674,26 +687,38 @@ Si $y$ representa el número de depredadores y $x$ representa el número de pres
     x' = -0.1x + 0.002xy\\
     y' = 0.2y - 0.0025xy.
   \end{cases}
-\] Los puntos críticos son $(0,0)$ y $(c / d, a / b) = (80, 50)$ por lo tanto la solución del sistema está dada por
+\] Los puntos críticos son $(0,0)$ y $(c / d, a / b) = (80, 50)$
+por lo tanto la solución del sistema está dada por
 \[
 \frac{x^{0.2}y^{0.1}}{e^{0.0025x}e^{0.002y}} = c_0.
 \] 
 \begin{figure}[h]
   \centering
   \includegraphics[width=1.\linewidth]{img/lotka-volterra-1.png}
-  \caption{Gráfica de las funciones $F$ y $G$ junto con el plano fase del sistema.}%
+  \caption{
+    Gráfica de las funciones $F$ y $G$ junto con
+    el plano fase del sistema.}%
   \label{fig:lotka-volterra-1}
 \end{figure}
 
 \subsection{Modelo de Competición de Lotka-Volterra}
 
-Éste tipo de modelo se presenta cuando existen dos o más depredadores compitiendo por los recursos de alimento, agua, espacio, etc en un sistema. Se han diseñado varios modelos matemáticos que ofrecen ideas en cuanto a las condiciones que permiten la coexistencia. Supongamos que $x$ es la cantidad de individuos de la especie I y $y$ es la cantidad de individuos de la especia II. Entonces el modelo de Lotka-Volterra se expresa como
+Éste tipo de modelo se presenta cuando existen dos o más
+depredadores compitiendo por los recursos de alimento, agua,
+espacio, etc en un sistema. Se han diseñado varios modelos
+matemáticos que ofrecen ideas en cuanto a las condiciones que 
+permiten la coexistencia. Supongamos que $x$ es la cantidad 
+de individuos de la especie I y $y$ es la cantidad de 
+individuos de la especia II. Entonces el modelo de Lotka-Volterra
+se expresa como
 \[
 \begin{cases}
   x' = \frac{r_1}{k_1}x(k_1 - x - a_1 y)\\
   y' = \frac{r_2}{k_2}y(k_2 - y - a_2 x)
 \end{cases}
-\] donde $r_1, r_2, k_1, k_2, a_1$ y $a_2$ son constantes positivas. El sistema tiene cuatro puntos críticos $(0,0)$, $(k_1,0)$, $(0,k_2)$ y el $(x,y)$ que se obtiene al resolver el sistema
+\] donde $r_1, r_2, k_1, k_2, a_1$ y $a_2$ son constantes positivas.
+El sistema tiene cuatro puntos críticos $(0,0)$, $(k_1,0)$, $(0,k_2)$
+y el $(x,y)$ que se obtiene al resolver el sistema
 \[
 \begin{cases}
   k_1 - x - a_1 y = 0\\
@@ -710,7 +735,8 @@ Si $y$ representa el número de depredadores y $x$ representa el número de pres
 \] Los puntos críticos son
 \[
   (0,0), \quad (50,0), \quad (0,100) \quad \text{ y } \quad (20,40).
-\] Analizamos la estabilidad de los puntos por método de la linealización. La matriz Jacobiana del sistema es
+\] Analizamos la estabilidad de los puntos por método de la
+linealización. La matriz Jacobiana del sistema es
 \[
   DF = \begin{bmatrix}
     -0.008x - 0.003y + 0.2 & -0.003x\\
@@ -724,28 +750,35 @@ Si $y$ representa el número de depredadores y $x$ representa el número de pres
         0.2 & 0\\
         0 & 0.1
       \end{bmatrix},
-    \] con $\Delta = 0.02$ y $\tau = 0.3$ entonces $\tau^2 - 4\Delta = 0.01 > 0$ por lo tanto el punto $(0,0)$ es un nodo inestable.
+    \] con $\Delta = 0.02$ y $\tau = 0.3$ entonces
+    $\tau^2 - 4\Delta = 0.01 > 0$ por lo tanto el punto $(0,0)$
+    es un nodo inestable.
   \item Para el punto $(50,0)$ tenemos
     \[
       DF(50,0) = \begin{bmatrix}
         -0.2 & -0.15\\
         0 & -0.05
       \end{bmatrix},
-    \] con $\Delta = 0.01$ y $\tau = -0.25$, entonces $\tau^2 - 4\Delta = 0.0225 > 0$, por lo tanto el punto $(50,0)$ es un nodo estable.
+    \] con $\Delta = 0.01$ y $\tau = -0.25$,
+    entonces $\tau^2 - 4\Delta = 0.0225 > 0$, por lo tanto el
+    punto $(50,0)$ es un nodo estable.
   \item Para el punto $(0,100)$ tenemos
     \[
       DF(0,100) = \begin{bmatrix}
         -0.1 & 0\\
         -0.3 & -0.1
       \end{bmatrix},
-    \] con $\Delta = 0.01$ y $\tau = -0.2$ por lo que $\tau^2 - 4\Delta = 0$ y así el punto $(0,100)$ es un nodo degenerado estable.
+    \] con $\Delta = 0.01$ y $\tau = -0.2$ por lo que
+    $\tau^2 - 4\Delta = 0$ y así el punto $(0,100)$ es
+    un nodo degenerado estable.
   \item Finalmente para el punto $(20,40)$ tenemos
     \[
       DF(20,40) = \begin{bmatrix}
         -0.08 & -0.06\\
         -0.12 & -0.04
       \end{bmatrix},
-    \] con $\Delta = -0.004 < 0$  por lo tanto el punto $(20,40)$ es un punto silla.
+    \] con $\Delta = -0.004 < 0$  por lo tanto el punto
+    $(20,40)$ es un punto silla.
 \end{itemize}
 
 \begin{figure}[h]
