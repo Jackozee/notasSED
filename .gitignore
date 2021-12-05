@@ -274,3 +274,9 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Mac filesystem
+.DS_Store
+
+# Jupyter Notebooks
+.ipynb_checkpoints
